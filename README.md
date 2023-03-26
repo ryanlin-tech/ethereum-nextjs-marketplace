@@ -1,109 +1,54 @@
-## Full stack NFT marketplace built with Polygon, Solidity, IPFS, & Next.js
+# NFT Aggregator Project Plan
 
-![Header](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pfofv47dooojerkmfgr4.png)
+This project plan outlines the features and phases of an NFT aggregator platform that displays collections, allows for buying and selling, and includes other useful features for NFT collectors and investors.
 
-This is the codebase to go along with tbe blog post [Building a Full Stack NFT Marketplace on Ethereum with Polygon](https://dev.to/dabit3/building-scalable-full-stack-apps-on-ethereum-with-polygon-2cfb)
 
-### Running this project
+## **Project Phases**
 
-#### Gitpod
+This project will be developed in four phases, with each phase building on the previous one. The phases and their associated features are:
 
-To deploy this project to Gitpod, follow these steps:
 
-1. Click this link to deploy
+### **Phase 1**
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#github.com/dabit3/polygon-ethereum-nextjs-marketplace)
+Phase 1 will focus on integrating with third-party market APIs and building the basic functionality of the platform. The features of Phase 1 are:
 
-2. Import the RPC address given to you by GitPod into your MetaMask wallet
+- Collection data display: Display information about various NFT collections, including prices, images, and descriptions.
+- Portfolio: Allow users to create and manage their own NFT portfolios.
+- Real-time refreshing: Keep all NFT data up-to-date in real time.
+- Buy now: Allow users to buy NFTs using smart contracts and third-party APIs.
+- List: Allow users to list their own NFTs for sale.
+- Bid: Allow users to place bids on NFTs.
+- ETH deposit and withdraw: Allow users to deposit and withdraw ETH to and from their accounts.
 
-This endpoint will look something like this:
 
-```
-https://8545-copper-swordtail-j1mvhxv3.ws-eu18.gitpod.io/
-```
+### **Phase 2**
 
-The chain ID should be 1337. If you have a localhost rpc set up, you may need to overwrite it.
+Phase 2 will focus on adding more advanced features to the platform. The features of Phase 2 are:
 
-![MetaMask RPC Import](wallet.png)
+- Item subpage: Allow users to view detailed information about individual NFTs.
+- Data dashboard: Provide users with data and analytics about NFTs and collections.
+- Item sorting: Allow users to sort NFTs by various criteria, such as price or popularity.
+- Collection search: Allow users to search for NFT collections.
+- Attributes search: Allow users to search for NFTs based on specific attributes, such as rarity or color.
+- Shopping cart: Allow users to add multiple NFTs to a shopping cart before purchasing.
 
-#### Local setup
 
-To run this project locally, follow these steps.
+### **Phase 3**
 
-1. Clone the project locally, change into the directory, and install the dependencies:
+Phase 3 will focus on adding additional features that can help users earn or acquire NFTs. The features of Phase 3 are:
 
-```sh
-git clone https://github.com/dabit3/polygon-ethereum-nextjs-marketplace.git
+- Make offer: Allow users to make offers on NFTs that are not currently for sale.
+- Initial NFT offering: Sell our NFT as membership cards. The NFT holder will have Token Airdrop later on
+- Share to earn: Allow users to earn NFTs by sharing the platform with others.
 
-cd polygon-ethereum-nextjs-marketplace
 
-# install using NPM or Yarn
-npm install
+### **Phase 4**
 
-# or
+Phase 4 will focus on adding financial features to the platform. The features of Phase 4 are:
 
-yarn
-```
+- Buy now, pay later: Allow users to purchase NFTs on credit and pay back over time.
 
-2. Start the local Hardhat node
 
-```sh
-npx hardhat node
-```
+## **Conclusion**
 
-3. With the network running, deploy the contracts to the local network in a separate terminal window
-
-```sh
-npx hardhat run scripts/deploy.js --network localhost
-```
-
-4. Start the app
-
-```
-npm run dev
-```
-
-### Configuration
-
-To deploy to Polygon test or main networks, update the configurations located in __hardhat.config.js__ to use a private key and, optionally, deploy to a private RPC like Infura.
-
-```javascript
-require("@nomiclabs/hardhat-waffle");
-const fs = require('fs');
-const privateKey = fs.readFileSync(".secret").toString().trim() || "01234567890123456789";
-
-// infuraId is optional if you are using Infura RPC
-const infuraId = fs.readFileSync(".infuraid").toString().trim() || "";
-
-module.exports = {
-  defaultNetwork: "hardhat",
-  networks: {
-    hardhat: {
-      chainId: 1337
-    },
-    mumbai: {
-      // Infura
-      // url: `https://polygon-mumbai.infura.io/v3/${infuraId}`
-      url: "https://rpc-mumbai.matic.today",
-      accounts: [privateKey]
-    },
-    matic: {
-      // Infura
-      // url: `https://polygon-mainnet.infura.io/v3/${infuraId}`,
-      url: "https://rpc-mainnet.maticvigil.com",
-      accounts: [privateKey]
-    }
-  },
-  solidity: {
-    version: "0.8.4",
-    settings: {
-      optimizer: {
-        enabled: true,
-        runs: 200
-      }
-    }
-  }
-};
-```
-
-If using Infura, update __.infuraid__ with your [Infura](https://infura.io/) project ID.
+This project plan outlines the features and phases of an NFT aggregator platform. By following this plan, we can create a comprehensive platform that provides value to NFT collectors and investors.
